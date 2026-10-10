@@ -56,6 +56,7 @@ for(const slug of shortlist){
  const p='brands/simple-icons/svg/'+slug+'.svg';
  const q='brands/simple-icons/png/'+slug+'.png';
  put(path.join(assets,p),svg);
+ mkdir(path.dirname(path.join(assets,q)));
  await sharp(Buffer.from(svg)).resize(512,512,{fit:'contain'}).png().toFile(path.join(assets,q));
  logos.push({slug,provider:'simple-icons',title:icon.title,hex:icon.hex,svg:p,pngLight:q,pngDark:q,source:icon.source,guidelines:icon.guidelines||null,license:icon.license||null});
 }
