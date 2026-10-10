@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-10-10T04:52:50.698Z",
+  "sources": [
+    {
+      "name": "Lobe Icons SVG",
+      "url": "https://github.com/lobehub/lobe-icons",
+      "package": "@lobehub/icons-static-svg",
+      "version": "1.95.1"
+    },
+    {
+      "name": "Lobe Icons PNG",
+      "url": "https://github.com/lobehub/lobe-icons",
+      "package": "@lobehub/icons-static-png",
+      "version": "1.97.1"
+    },
+    {
+      "name": "Simple Icons",
+      "url": "https://github.com/simple-icons/simple-icons",
+      "version": "16.34.0",
+      "license": "CC0 (icon artwork); company trademarks still protected"
+    }
+  ],
+  "missingSimpleIcons": [
+    "openai",
+    "canva",
+    "adobeaftereffects",
+    "adobepremierepro",
+    "slack",
+    "linkedin",
+    "visualstudiocode",
+    "amazonaws",
+    "microsoftazure",
+    "midjourney",
+    "stabilityai",
+    "cohere"
+  ],
+  "totals": {
+    "lobeSvg": 950,
+    "lobePngLight": 950,
+    "lobePngDark": 950,
+    "simpleIcons": 76
+  }
+}

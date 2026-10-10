@@ -1,0 +1,95 @@
+{
+  "origin": "Original procedural artwork; no third-party brands embedded",
+  "assets": [
+    {
+      "slug": "aurora-halo",
+      "svg": "artwork/svg/aurora-halo.svg",
+      "png": "artwork/png/aurora-halo.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    },
+    {
+      "slug": "orbit-rings",
+      "svg": "artwork/svg/orbit-rings.svg",
+      "png": "artwork/png/orbit-rings.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    },
+    {
+      "slug": "particle-field",
+      "svg": "artwork/svg/particle-field.svg",
+      "png": "artwork/png/particle-field.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    },
+    {
+      "slug": "circuit-traces",
+      "svg": "artwork/svg/circuit-traces.svg",
+      "png": "artwork/png/circuit-traces.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    },
+    {
+      "slug": "focus-target",
+      "svg": "artwork/svg/focus-target.svg",
+      "png": "artwork/png/focus-target.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    },
+    {
+      "slug": "neural-network",
+      "svg": "artwork/svg/neural-network.svg",
+      "png": "artwork/png/neural-network.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    },
+    {
+      "slug": "audio-waveform",
+      "svg": "artwork/svg/audio-waveform.svg",
+      "png": "artwork/png/audio-waveform.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    },
+    {
+      "slug": "glass-panel",
+      "svg": "artwork/svg/glass-panel.svg",
+      "png": "artwork/png/glass-panel.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    },
+    {
+      "slug": "kinetic-burst",
+      "svg": "artwork/svg/kinetic-burst.svg",
+      "png": "artwork/png/kinetic-burst.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "background": "transparent"
+    }
+  ]
+}
