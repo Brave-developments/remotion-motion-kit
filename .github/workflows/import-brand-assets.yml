@@ -1,0 +1,90 @@
+
+name: Import AI brand logos and artwork
+run-name: Build SVG and PNG brand asset library
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-brand-assets.yml'
+      - 'scripts/build-brand-assets.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: remotion-brand-assets
+  cancel-in-progress: false
+
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout Remotion Motion Kit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install asset converter and Simple Icons
+        run: npm install --no-save --no-package-lock --no-audit --no-fund sharp@0.34.4 simple-icons@16.34.0
+
+      - name: Download all available Lobe Icons SVGs and PNGs
+        shell: bash
+        run: |
+          set -euo pipefail
+          packdir="$RUNNER_TEMP/lobe-packs"
+          mkdir -p "$packdir/svg" "$packdir/png"
+          npm pack @lobehub/icons-static-svg@latest --silent --pack-destination "$packdir/svg"
+          npm pack @lobehub/icons-static-png@latest --silent --pack-destination "$packdir/png"
+          for kind in svg png; do
+            archive="$(find "$packdir/$kind" -maxdepth 1 -name '*.tgz' -print -quit)"
+            if [[ -z "$archive" ]]; then echo "::error::Missing npm package for $kind"; exit 1; fi
+            tar -xzf "$archive" -C "$packdir/$kind"
+          done
+          echo "LOBE_PACKDIR=$packdir" >> "$GITHUB_ENV"
+
+      - name: Generate real asset files and machine-readable manifests
+        run: node scripts/build-brand-assets.mjs "$LOBE_PACKDIR/svg/package" "$LOBE_PACKDIR/png/package"
+
+      - name: Verify required logos and artwork
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import sharp from 'sharp';
+          const brands=JSON.parse(fs.readFileSync('assets/brands/index.json','utf8'));
+          const found=new Set(brands.brands.map(x=>x.slug));
+          for (const slug of ['openai','claude','cursor','deepseek','perplexity','github']) {
+            if (!found.has(slug)) throw new Error('Missing required logo: '+slug);
+          }
+          const n=brands.totals;
+          if(Math.min(n.lobeSvg,n.lobePngLight,n.lobePngDark)<100) throw new Error('Incomplete AI logo packages');
+          const art=JSON.parse(fs.readFileSync('assets/artwork/index.json','utf8'));
+          for (const row of art.assets) {
+            if(!fs.existsSync('assets/'+row.svg)||!fs.existsSync('assets/'+row.png))
+              throw new Error('Artwork missing: '+row.slug);
+          }
+          const p=await sharp('assets/artwork/png/aurora-halo.png').metadata();
+          if (p.width!==1080||p.height!==1920||!p.hasAlpha) throw new Error('Incorrect artwork size or alpha');
+          console.log('VALIDATED',n,'original artworks:',art.assets.length);
+          NODE
+          oversized="$(find assets -type f -size +95M -print -quit)"
+          if [[ -n "$oversized" ]]; then echo "::error::Oversized $oversized"; exit 1; fi
+
+      - name: Commit all downloaded SVGs and PNGs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/brands assets/artwork
+          if git diff --staged --quiet; then echo "Assets already current"; exit 0; fi
+          git commit -m "Import AI logos as SVG/PNG and add original transparent motion artwork"
+          git push origin HEAD:main
