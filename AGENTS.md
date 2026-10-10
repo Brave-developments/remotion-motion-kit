@@ -1,5 +1,16 @@
 # Agent instructions — Remotion Motion Kit
 
+## Logo and motion artwork asset policy
+
+- The AI brand pack is at assets/brands/lobe; developer icon pack is at assets/brands/simple-icons.
+- Use assets/brands/index.json to discover exact slugs and which SVG/light PNG/dark PNG files exist.
+- Motion backdrops and transparent overlays are in assets/artwork with its own manifest.
+- Before using images from this repo in another Remotion project, copy or import chosen assets into that project's public media path.
+- Do not fabricate an official brand logo or recolor marks contrary to brand rules. Do not imply endorsements.
+- Third-party logos must follow their publishers' guidelines even if the icon package's source licence is permissive.
+
+
+
 Read README.md, REPORT.md, THIRD_PARTY.md and docs/INTEGRATION.md first.
 
 - This is a **standalone Remotion library**. Do not treat it as FlashCut AI's app repository.

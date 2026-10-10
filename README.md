@@ -4,6 +4,21 @@
 
 Built for [Brave Developments](https://github.com/Brave-developments) as a **standalone** collection. It is independent of FlashCut AI and is not itself the FlashCut video editor.
 
+
+## AI logos and transparent motion artwork
+
+The asset library now contains **950 AI/LLM SVG logos**, **950 light + 950 dark PNG variants**, **76 additional developer/social icon pairs**, and **9 original transparent SVG/PNG backgrounds/overlays**. Exact files and available brand names are recorded in the manifests.
+
+- [Browse AI SVG logos](assets/brands/lobe/svg)
+- [Browse light PNG logos](assets/brands/lobe/png/light)
+- [Browse dark PNG logos](assets/brands/lobe/png/dark)
+- [Browse developer/social SVG + PNG](assets/brands/simple-icons)
+- [Browse original motion artwork](assets/artwork)
+- [Machine-readable brand catalogue](assets/brands/index.json)
+- [Asset pack usage instructions](assets/ASSET_PACK.md)
+
+The source library is Lobe Icons plus a curated set of Simple Icons. Logos belong to their respective brands and do not imply sponsorship or official partnership. For updates, run the GitHub Actions workflow titled **Import AI brand logos and artwork**.
+
 ## Explore
 
 | Section | What's there |
