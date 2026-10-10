@@ -1,0 +1,70 @@
+{
+  "notes": [
+    "Aliases are search helpers, not statements that two products have identical official logo artwork.",
+    "ChatGPT currently resolves to the OpenAI mark in this icon source, not to a separate ChatGPT brand kit."
+  ],
+  "aliases": [
+    {
+      "terms": [
+        "chatgpt",
+        "chat gpt",
+        "gpt"
+      ],
+      "assetSlug": "openai",
+      "note": "OpenAI brand symbol used as a fallback; no distinct ChatGPT logo in the imported Lobe package"
+    },
+    {
+      "terms": [
+        "claude code",
+        "claudecode"
+      ],
+      "assetSlug": "claudecode"
+    },
+    {
+      "terms": [
+        "github copilot",
+        "git hub copilot"
+      ],
+      "assetSlug": "githubcopilot"
+    },
+    {
+      "terms": [
+        "google gemini",
+        "gemini ai"
+      ],
+      "assetSlug": "gemini"
+    },
+    {
+      "terms": [
+        "openai codex",
+        "chatgpt codex"
+      ],
+      "assetSlug": "codex"
+    },
+    {
+      "terms": [
+        "cursor ai",
+        "cursor editor"
+      ],
+      "assetSlug": "cursor"
+    },
+    {
+      "terms": [
+        "grok ai"
+      ],
+      "assetSlug": "grok"
+    },
+    {
+      "terms": [
+        "perplexity ai"
+      ],
+      "assetSlug": "perplexity"
+    },
+    {
+      "terms": [
+        "hugging face"
+      ],
+      "assetSlug": "huggingface"
+    }
+  ]
+}
