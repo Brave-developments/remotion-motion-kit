@@ -1,0 +1,39 @@
+name: Validate Motion Kit preview
+
+on:
+  push:
+    paths:
+      - 'components/**'
+      - 'preview/**'
+      - 'src/**'
+      - 'package.json'
+      - 'tsconfig.json'
+      - '.github/workflows/validate-motion-kit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install demo dependencies
+        run: npm install --no-audit --no-fund
+      - name: Typecheck original components
+        run: npm run typecheck
+      - name: Ensure Remotion browser
+        run: npm run remotion:ensure
+      - name: Render original 8-second MP4 demo
+        run: npm run render:demo
+      - name: Upload rendered sample
+        uses: actions/upload-artifact@v4
+        with:
+          name: remotion-motion-kit-preview
+          path: out/motion-kit-demo.mp4
+          retention-days: 7
