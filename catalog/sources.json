@@ -1,0 +1,56 @@
+{
+  "reviewed_at": "2026-10-10",
+  "app": "Brave-developments/flashcut-ai",
+  "remotion_version": "4.0.534",
+  "sources": [
+    {
+      "id": "remotionui",
+      "repository": "https://github.com/riaz37/remotion-ui",
+      "license": "MIT reported",
+      "method": "npx remotion-ui@latest init --existing; npx remotion-ui@latest add social-clip",
+      "clone_by_script": true
+    },
+    {
+      "id": "remotion-scenes",
+      "repository": "https://github.com/lifeprompt-team/remotion-scenes",
+      "license": "MIT reported",
+      "method": "clone; selectively adapt scenes",
+      "clone_by_script": true
+    },
+    {
+      "id": "onda",
+      "repository": "https://github.com/degueba/onda",
+      "license": "MIT code; brand excluded",
+      "method": "npx ondajs add fade-in",
+      "clone_by_script": true
+    },
+    {
+      "id": "remotion-bits",
+      "repository": "https://github.com/av/remotion-bits",
+      "license": "MIT reported",
+      "method": "npm install remotion-bits; optional npx remotion-bits mcp",
+      "clone_by_script": true
+    },
+    {
+      "id": "rve-templates",
+      "repository": "https://github.com/reactvideoeditor/remotion-templates",
+      "license": "README states MIT; standalone license notice to confirm",
+      "method": "manual research",
+      "clone_by_script": false
+    },
+    {
+      "id": "rendercomp-free",
+      "repository": "https://github.com/RenderComp/free-remotion-templates",
+      "license": "MIT; preserve SPDX notices",
+      "method": "clone, copy curated compositions",
+      "clone_by_script": true
+    },
+    {
+      "id": "official-skills",
+      "repository": "https://github.com/remotion-dev/skills",
+      "license": "check upstream before redistribution",
+      "method": "npx skills add remotion-dev/skills",
+      "clone_by_script": false
+    }
+  ]
+}

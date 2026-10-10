@@ -1,0 +1,88 @@
+name: Import Remotion asset libraries
+run-name: Import six upstream animation collections
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-remotion-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: remotion-vendor-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout kit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Download 6 source libraries and log revisions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p vendor
+          tmp="$(mktemp -d)"
+          trap 'rm -rf "$tmp"' EXIT
+          printf 'library\trepository\tcommit\troot_license\n' > vendor/SOURCE_REVISIONS.tsv
+
+          import_library() {
+            local name="$1" url="$2"
+            echo "::group::Import $name"
+            git clone --quiet --depth=1 --filter=blob:none "$url" "$tmp/$name"
+            local sha
+            sha="$(git -C "$tmp/$name" rev-parse HEAD)"
+            mkdir -p "vendor/$name"
+            rsync -a --delete --exclude='.git/' --exclude='node_modules/' --exclude='.env' --exclude='.env.local' "$tmp/$name/" "vendor/$name/"
+            local license
+            license="$(find "vendor/$name" -maxdepth 1 -type f -iname 'LICENSE*' -printf '%f\n' | head -n 1)"
+            if [[ -z "$license" ]]; then
+              license='NOT_FOUND_CHECK_README'
+              echo "::warning::$name has no root LICENSE file; review its README/individual files before reuse."
+            fi
+            printf '%s\t%s\t%s\t%s\n' "$name" "$url" "$sha" "$license" >> vendor/SOURCE_REVISIONS.tsv
+            du -sh "vendor/$name"
+            echo "::endgroup::"
+          }
+
+          import_library remotion-ui https://github.com/riaz37/remotion-ui.git
+          import_library remotion-scenes https://github.com/lifeprompt-team/remotion-scenes.git
+          import_library onda https://github.com/degueba/onda.git
+          import_library remotion-bits https://github.com/av/remotion-bits.git
+          import_library rve-remotion-templates https://github.com/reactvideoeditor/remotion-templates.git
+          import_library rendercomp-free https://github.com/RenderComp/free-remotion-templates.git
+
+          oversized="$(find vendor -type f -size +95M -print -quit)"
+          if [[ -n "$oversized" ]]; then
+            echo "::error::GitHub refuses files >100 MB: $oversized"
+            exit 1
+          fi
+
+          cat > vendor/README.md <<'EOF'
+          # Vendored Remotion Animation Collections
+          Source code mirrored from the original upstream repositories, not
+          automatically added to the Motion Kit demo. Keep all upstream
+          licences/copyright notices and inspect third-party example media.
+          See SOURCE_REVISIONS.tsv for exact source SHAs.
+          EOF
+
+      - name: Commit actual imported assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f vendor
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Import six upstream Remotion animation libraries and templates"
+          git push origin HEAD:main

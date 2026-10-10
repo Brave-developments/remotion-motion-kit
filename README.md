@@ -1,7 +1,65 @@
 # Remotion Motion Kit
 
-A standalone, reusable library of Remotion motion graphics, tech-news visuals, templates and AI coding resources.
+**Reusable Remotion animation assets, scene templates, tech-news graphics, AI-agent resources and source-code library.**
 
-This repository is being populated with its original animations, documentation and six reviewed upstream source collections. See `REPORT.md` for the upgrade plan and `catalog/sources.json` for upstream URLs and provenance.
+Built for [Brave Developments](https://github.com/Brave-developments) as a **standalone** collection. It is independent of FlashCut AI and is not itself the FlashCut video editor.
 
-Maintained for Brave-developments. The upstream libraries remain the work of their respective authors and retain their own notices and licensing.
+## Explore
+
+| Section | What's there |
+| --- | --- |
+| [REPORT.md](REPORT.md) | Consolidated research, selection criteria, architecture, production storyboard, roadmap |
+| [catalog/sources.json](catalog/sources.json) | Seven researched libraries/skill sources with provenance and usage notes |
+| [components](components) | Four original reusable frame-based motion graphics |
+| [preview/MotionKitDemo.tsx](preview/MotionKitDemo.tsx) | 8-second vertical starter video demo |
+| [assets/graphics](assets/graphics) | Original SVG motion graphic |
+| [vendor](vendor) | Source checkouts of six upstream animation collections, imported by GitHub Actions |
+| [docs/INTEGRATION.md](docs/INTEGRATION.md) | Integration into the FlashCut AI editor without breaking existing functionality |
+| [docs/LICENSES.md](docs/LICENSES.md) | Licence and attribution policy |
+| [THIRD_PARTY.md](THIRD_PARTY.md) | Upstream collection links, obligations and licensing caveats |
+| [AGENTS.md](AGENTS.md) | Guidance for Codex/Cursor or other coding agents |
+
+## Original Remotion compositions — preview locally
+
+Requires Node.js 22+ and npm. This project is only a showcase for starter components; upstream vendor projects may require their own dependencies and setup.
+
+~~~bash
+npm install
+npm run studio
+# select the MotionKitDemo composition
+npm run typecheck
+npm run render:demo
+~~~
+
+The sample is 1080x1920, 30fps, 8 seconds. It uses only original placeholders, not fake news presented as real evidence.
+
+## Upstream source collections — copied into this repository
+
+The automated import workflow pulls actual source files from the following six repositories into versioned directories under vendor/:
+
+- [RemotionUI](https://github.com/riaz37/remotion-ui)
+- [Remotion Scenes](https://github.com/lifeprompt-team/remotion-scenes)
+- [Onda](https://github.com/degueba/onda)
+- [Remotion Bits](https://github.com/av/remotion-bits)
+- [RVE Remotion Templates](https://github.com/reactvideoeditor/remotion-templates)
+- [RenderComp Free Templates](https://github.com/RenderComp/free-remotion-templates)
+
+The imported assets are source collections, **not** automatically installed into this project's live Remotion demo. Individual upstream components may need extra dependencies or code adaptation. Preserve their own licenses and copyright when distributing.
+
+[Official Remotion AI Skills](https://github.com/remotion-dev/skills) are installation instructions rather than renderable video assets; install from the official source:
+
+~~~bash
+npx skills add remotion-dev/skills
+~~~
+
+Each imported source's exact commit revision is in vendor/SOURCE_REVISIONS.tsv. To update the vendored libraries, manually run the GitHub Actions **Import Remotion asset libraries** workflow.
+
+## Scope
+
+The collection is for technology news shorts, animated article evidence, browser/product demonstrations, verified statistics, subtle backgrounds, video transitions, and FiveM tutorial layouts. All real screenshots, clips, audio and article quotations still need content provenance and permission review.
+
+## Repository rights
+
+The third-party folders retain the licensing of their respective creators; this repository does **not** relicense them as a single collection. The base Remotion renderer has a separate licence: https://www.remotion.dev/license.
+
+The source vendor is intentionally retained independently of FlashCut AI so editors, agents and other projects can reference it without copying everything into a running application.

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+<defs><radialGradient id="glow"><stop stop-color="#124766" stop-opacity=".7"/><stop offset="1" stop-color="#081421" stop-opacity="0"/></radialGradient></defs>
+<circle cx="540" cy="780" r="600" fill="url(#glow)"/>
+<g fill="none" stroke="#67d5ea" stroke-width="3" opacity=".4"><circle cx="540" cy="780" r="270"/><circle cx="540" cy="780" r="360"/><circle cx="540" cy="780" r="455"/><path d="M60 780h960M540 300v960"/></g>
+</svg>
