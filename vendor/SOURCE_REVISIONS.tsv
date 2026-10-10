@@ -1,0 +1,7 @@
+library	repository	commit	root_license
+remotion-ui	https://github.com/riaz37/remotion-ui.git	b7e0e6becc3d22b8b03dfef72c064f72ff9fad1f	LICENSE
+remotion-scenes	https://github.com/lifeprompt-team/remotion-scenes.git	02c7a84241da7010b5f59c420b0110aafd1d6f0d	LICENSE
+onda	https://github.com/degueba/onda.git	3c814051269597b31fee1603bef7ccfb93d091b6	LICENSE
+remotion-bits	https://github.com/av/remotion-bits.git	de35fda84b7b6acbe549a0b302a82ef211e8ef1e	NOT_FOUND_CHECK_README
+rve-remotion-templates	https://github.com/reactvideoeditor/remotion-templates.git	6209b724798e48ff395f8df1a6fa2d26082372b5	NOT_FOUND_CHECK_README
+rendercomp-free	https://github.com/RenderComp/free-remotion-templates.git	f648980e528defb7594e24c6447055f0540f340b	LICENSE
