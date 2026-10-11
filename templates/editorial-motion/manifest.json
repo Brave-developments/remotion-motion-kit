@@ -1,0 +1,48 @@
+{
+  "id": "editorial-motion",
+  "version": "1.0.0",
+  "displayName": "Editorial Motion",
+  "kind": "optional-scene-template",
+  "selection": "explicit-only",
+  "defaultEnabled": false,
+  "modes": [
+    "illustrated-explainer",
+    "saas-ui",
+    "product-comparison"
+  ],
+  "layouts": [
+    "full",
+    "upper"
+  ],
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "upperVisualRegionPx": 1160
+  },
+  "palette": {
+    "ivory": "#F2EFE7",
+    "paper": "#FFFEFA",
+    "ink": "#171717",
+    "muted": "#77766F",
+    "yellow": "#F9D746",
+    "mint": "#DDF4EA",
+    "peach": "#FBE7D6",
+    "lilac": "#EDE6FF",
+    "red": "#C8453C",
+    "green": "#178363",
+    "darkCard": "#1A1721"
+  },
+  "motion": {
+    "entry": "frame-controlled spring with fade and upward movement",
+    "staggerFrames": 8,
+    "recommendedSceneDurationFrames": [
+      90,
+      180
+    ],
+    "keepComposition": "prefer successive reveals over hard cuts",
+    "caption": "external editor/HeyGen retains final caption authority"
+  },
+  "assetPolicy": "Use only sourced logos and licensed characters; examples are mockups and must not be represented as real product UI or verified statistics.",
+  "notes": "Import the EditorialMotion component and explicitly provide mode and layout. No auto-selection for unrelated videos."
+}
