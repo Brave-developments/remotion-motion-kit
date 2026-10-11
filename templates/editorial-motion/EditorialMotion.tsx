@@ -159,7 +159,16 @@ const SaaSUI: React.FC<EditorialMotionProps & { height: number }> = (props) => {
     </div>
     <div style={{ position: 'absolute', left: 70, right: 70, top: Math.max(870, props.height - 380), ...useEntrance(63) }}>
       <div style={{ textAlign: 'center', fontFamily: fonts.interface, fontWeight: 900, fontSize: 99, letterSpacing: -6, lineHeight: 1.0, color: p.ink }}>
-        {props.headline}
+        {props.emphasis && props.headline.toLowerCase().includes(props.emphasis.toLowerCase()) ? (() => {
+          const start = props.headline.toLowerCase().indexOf(props.emphasis!.toLowerCase());
+          return <>
+            {props.headline.slice(0, start)}
+            <span style={{ fontFamily: fonts.editorial, fontStyle: 'italic', fontWeight: 400, letterSpacing: -4 }}>
+              {props.headline.slice(start, start + props.emphasis!.length)}
+            </span>
+            {props.headline.slice(start + props.emphasis!.length)}
+          </>;
+        })() : props.headline}
       </div>
       {props.subheadline ? <div style={{ textAlign: 'center', marginTop: 18, color: p.muted, fontSize: 30 }}>{props.subheadline}</div> : null}
     </div>
