@@ -37,9 +37,7 @@ const defaultProducts: EditorialProduct[] = [
 
 const clamp = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
 
-const useEntrance = (delay: number, distance = 56) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+const entranceAt = (frame: number, fps: number, delay: number, distance = 56): React.CSSProperties => {
   const progress = spring({
     frame: Math.max(0, frame - delay),
     fps,
@@ -50,6 +48,12 @@ const useEntrance = (delay: number, distance = 56) => {
     opacity: interpolate(frame, [delay, delay + 12], [0, 1], clamp),
     transform: `translateY(${(1 - progress) * distance}px) scale(${0.96 + progress * 0.04})`,
   } as React.CSSProperties;
+};
+
+const useEntrance = (delay: number, distance = 56) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  return entranceAt(frame, fps, delay, distance);
 };
 
 const EmphasizedHeadline: React.FC<{ text: string; emphasis?: string; size?: number }> = ({ text, emphasis, size = 86 }) => {
@@ -96,6 +100,8 @@ const PixelMascot: React.FC = () => (
 );
 
 const IllustratedExplainer: React.FC<EditorialMotionProps & { height: number }> = (props) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
   const logoStyle: React.CSSProperties = {
     width: 88, height: 88, display: 'grid', placeItems: 'center',
     borderRadius: 22, color: p.paper, fontSize: 42, fontWeight: 800,
@@ -108,7 +114,7 @@ const IllustratedExplainer: React.FC<EditorialMotionProps & { height: number }> 
       <div style={{ marginTop: 22, textAlign: 'center', color: p.muted, fontSize: 33, fontWeight: 700 }}>{props.subheadline}</div>
     </div>
     <div style={{ position: 'absolute', top: props.height * 0.36, left: 62, display: 'flex', gap: 38 }}>
-      {products.map((item, index) => <div key={item.name + index} style={{ ...logoStyle, background: item.accent || p.ink, ...useEntrance(14 + index * editorialMotion.staggerFrames) }}>
+      {products.map((item, index) => <div key={item.name + index} style={{ ...logoStyle, background: item.accent || p.ink, ...entranceAt(frame, fps, 14 + index * editorialMotion.staggerFrames) }}>
         {item.logoSrc ? <Img src={item.logoSrc} style={{ width: '78%', height: '78%', objectFit: 'contain' }} /> : item.name.slice(0, 1)}
       </div>)}
     </div>
@@ -161,6 +167,8 @@ const SaaSUI: React.FC<EditorialMotionProps & { height: number }> = (props) => {
 };
 
 const ProductComparison: React.FC<EditorialMotionProps & { height: number }> = (props) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
   const products = (props.products?.length ? props.products : defaultProducts).slice(0, 3);
   return <>
     <div style={{ position: 'absolute', left: 45, right: 45, top: 115, ...useEntrance(0) }}>
@@ -176,7 +184,7 @@ const ProductComparison: React.FC<EditorialMotionProps & { height: number }> = (
           borderRadius: 29, textAlign: 'center', padding: '60px 10px 35px',
           background: item.background || (index === 2 ? '#F2F1FC' : p.darkCard),
           color: foreground, boxShadow: '0 20px 32px #00000021',
-          ...useEntrance(12 + index * 13, 100),
+          ...entranceAt(frame, fps, 12 + index * 13, 100),
         }}>
           <div style={{ height: 180, display: 'grid', placeItems: 'center' }}>
             {item.logoSrc ? <Img src={item.logoSrc} style={{ width: 125, height: 125, objectFit: 'contain' }} /> :
