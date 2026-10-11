@@ -34,6 +34,17 @@ The source library is Lobe Icons plus a curated set of Simple Icons. Logos belon
 | [THIRD_PARTY.md](THIRD_PARTY.md) | Upstream collection links, obligations and licensing caveats |
 | [AGENTS.md](AGENTS.md) | Guidance for Codex/Cursor or other coding agents |
 
+## Optional editorial motion template
+
+[Editorial Motion](templates/editorial-motion/README.md) is **one opt-in design template** inspired by the user's editorial reference videos. It includes illustrated-explainer, SaaS-UI, and three-card product comparison scene modes, with an ivory/black/yellow/mint/peach palette and deterministic frame-based animation. It **does not** replace other styles or become the automatic default.
+
+- [Colour palette and animation direction](templates/editorial-motion/README.md)
+- [AI-readable manifest](templates/editorial-motion/manifest.json)
+- [Live component](templates/editorial-motion/EditorialMotion.tsx)
+- [12-second three-mode preview](preview/EditorialMotionDemo.tsx)
+- Preview: `npm run studio` and select `EditorialMotionDemo`; render: `npm run render:editorial`
+- Use `layout="upper"` to keep a top graphics region above a separate HeyGen presenter in Flashcut. No automatic Flashcut integration is implied.
+
 ## Original Remotion compositions — preview locally
 
 Requires Node.js 22+ and npm. This project is only a showcase for starter components; upstream vendor projects may require their own dependencies and setup.
