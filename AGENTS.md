@@ -27,7 +27,8 @@ Read README.md, REPORT.md, THIRD_PARTY.md and docs/INTEGRATION.md first.
 - Read `templates/editorial-motion/README.md`, `palette.ts` and `manifest.json` before using it.
 - Template ID is `editorial-motion`; **do not** make it the default for all videos. Activate it only when the creator/script specifically requests editorial motion.
 - One template contains three `mode` values: `illustrated-explainer`, `saas-ui`, `product-comparison`. Choose the mode that explains the current sentence, then supply editable copy and source-backed imagery.
-- Respect the 1080x1920, 30fps editorial style; ivory/paper/ink/yellow/pastels; serif titles and restrained progressive `spring()` / `interpolate()` animations.
+- Respect the 1080x1920, 30fps editorial style; only five swatches: ivory `#F2EFE7`, paper `#FFFEFA`, mint `#DEF4EA`, peach `#FAE7D7`, lilac `#EDE6FE`; serif titles and restrained progressive `spring()` / `interpolate()` animations.
+- No black or yellow backgrounds, highlights or product cards in this template. Functional legibility greys are permitted for text, outlines and subtle shadows only.
 - With a HeyGen presenter below, pass `layout="upper"`; preserve audio timing and editor-owned captions. Full-screen takeovers need explicit timeline intent.
 - Use licensed, verified product logos. Demo numbers, interfaces and letter-logo placeholders are **illustrations**, not documentary evidence.
 - Preview via `npm run studio` or `npm run render:editorial`; verify `npm run typecheck` and a real MP4 before approving output.
