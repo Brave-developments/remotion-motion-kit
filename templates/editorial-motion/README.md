@@ -16,6 +16,8 @@ These swatches are sampled from the five colour chips supplied by the creator. T
 | Peach | `#FAE7D7` | Highlights, pastel cards, gradients |
 | Lilac | `#EDE6FE` | Highlights, pastel cards, offset shadows |
 
+Card surfaces are locked to mint, peach and lilac in the template component. Per-product colours are intentionally not supported; actual externally sourced logos may retain their original official marks.
+
 **Functional neutrals (not theme swatches):** Accessible grey typography `#514D57`, secondary type `#817D87`, fine borders `#CDC8D0`, and subtle shadow tone `#AEA4B4`. These exist because pale-on-pale typography would be unreadable. They must not turn into black/dark cards or strong accent blocks.
 
 **Typography:** Georgia / Times New Roman serif for editorial headlines; Arial / Helvetica sans for dashboard copy and captions, with grey rather than black letterforms. Use licensed fonts when supplied.
