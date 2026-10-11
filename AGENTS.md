@@ -21,3 +21,13 @@ Read README.md, REPORT.md, THIRD_PARTY.md and docs/INTEGRATION.md first.
 - All real article screenshots, news/social posts, music and stock media require provenance and rights review.
 - For additional components, register their editable props and demo view and test an MP4 render.
 - In the target FlashCut editor, preserve the existing avatar narration and captions and use versioned motion clip types rather than breaking old projects.
+
+## Optional editorial motion template (explicit opt-in only)
+
+- Read `templates/editorial-motion/README.md`, `palette.ts` and `manifest.json` before using it.
+- Template ID is `editorial-motion`; **do not** make it the default for all videos. Activate it only when the creator/script specifically requests editorial motion.
+- One template contains three `mode` values: `illustrated-explainer`, `saas-ui`, `product-comparison`. Choose the mode that explains the current sentence, then supply editable copy and source-backed imagery.
+- Respect the 1080x1920, 30fps editorial style; ivory/paper/ink/yellow/pastels; serif titles and restrained progressive `spring()` / `interpolate()` animations.
+- With a HeyGen presenter below, pass `layout="upper"`; preserve audio timing and editor-owned captions. Full-screen takeovers need explicit timeline intent.
+- Use licensed, verified product logos. Demo numbers, interfaces and letter-logo placeholders are **illustrations**, not documentary evidence.
+- Preview via `npm run studio` or `npm run render:editorial`; verify `npm run typecheck` and a real MP4 before approving output.
