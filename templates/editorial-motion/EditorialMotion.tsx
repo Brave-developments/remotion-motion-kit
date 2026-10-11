@@ -8,8 +8,6 @@ export type EditorialProduct = {
   name: string;
   label?: string;
   logoSrc?: string;
-  accent?: string;
-  background?: string;
 };
 
 export type EditorialMotionProps = {
@@ -30,9 +28,9 @@ export type EditorialMotionProps = {
 };
 
 const defaultProducts: EditorialProduct[] = [
-  { name: 'Agent One', label: 'ILLUSTRATIVE', accent: p.mint, background: p.mint },
-  { name: 'Agent Two', label: 'ILLUSTRATIVE', accent: p.peach, background: p.peach },
-  { name: 'Agent Three', label: 'ILLUSTRATIVE', accent: p.lilac, background: p.lilac },
+  { name: 'Agent One', label: 'ILLUSTRATIVE' },
+  { name: 'Agent Two', label: 'ILLUSTRATIVE' },
+  { name: 'Agent Three', label: 'ILLUSTRATIVE' },
 ];
 
 const clamp = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
