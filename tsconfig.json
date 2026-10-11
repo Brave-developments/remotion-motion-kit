@@ -17,7 +17,8 @@
   "include": [
     "src/**/*",
     "components/**/*",
-    "preview/**/*"
+    "preview/**/*",
+    "templates/**/*"
   ],
   "exclude": [
     "vendor",
