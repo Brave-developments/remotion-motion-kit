@@ -25,9 +25,9 @@ export const EditorialMotionDemo: React.FC = () => (
         headline="Which tool fits?"
         subheadline="Compare verified product details"
         products={[
-          { name: 'Tool A', label: 'ILLUSTRATIVE', accent: '#DEF4EA', background: '#DEF4EA' },
-          { name: 'Tool B', label: 'ILLUSTRATIVE', accent: '#FAE7D7', background: '#FAE7D7' },
-          { name: 'Tool C', label: 'ILLUSTRATIVE', accent: '#EDE6FE', background: '#EDE6FE' },
+          { name: 'Tool A', label: 'ILLUSTRATIVE' },
+          { name: 'Tool B', label: 'ILLUSTRATIVE' },
+          { name: 'Tool C', label: 'ILLUSTRATIVE' },
         ]}
         caption="Replace with an evidence-backed comparison"
         demoWatermark
