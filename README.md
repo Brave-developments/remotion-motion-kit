@@ -36,7 +36,7 @@ The source library is Lobe Icons plus a curated set of Simple Icons. Logos belon
 
 ## Optional editorial motion template
 
-[Editorial Motion](templates/editorial-motion/README.md) is **one opt-in design template** inspired by the user's editorial reference videos. It includes illustrated-explainer, SaaS-UI, and three-card product comparison scene modes, with an ivory/black/yellow/mint/peach palette and deterministic frame-based animation. It **does not** replace other styles or become the automatic default.
+[Editorial Motion](templates/editorial-motion/README.md) is **one opt-in design template** inspired by the user's editorial reference videos. It includes illustrated-explainer, SaaS-UI, and three-card product comparison scene modes, with the creator-selected ivory, paper white, mint, peach and lilac palette (no black or yellow accents) and deterministic frame-based animation. It **does not** replace other styles or become the automatic default.
 
 - [Colour palette and animation direction](templates/editorial-motion/README.md)
 - [AI-readable manifest](templates/editorial-motion/manifest.json)
