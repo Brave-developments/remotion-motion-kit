@@ -32,3 +32,11 @@ Read README.md, REPORT.md, THIRD_PARTY.md and docs/INTEGRATION.md first.
 - With a HeyGen presenter below, pass `layout="upper"`; preserve audio timing and editor-owned captions. Full-screen takeovers need explicit timeline intent.
 - Use licensed, verified product logos. Demo numbers, interfaces and letter-logo placeholders are **illustrations**, not documentary evidence.
 - Preview via `npm run studio` or `npm run render:editorial`; verify `npm run typecheck` and a real MP4 before approving output.
+
+## Optional healthcare nursing explainer system
+
+- Read `templates/healthcare/README.md`, `tokens.ts` and `manifest.json` before selecting `mode`.
+- Use only on medical/nursing explainer beats deliberately selecting `templateId: "healthcare"`. Never replace `editorial-motion` or the user's other styles.
+- Six modes: `clinical-dashboard`, `anatomy-overlay`, `cellular-mechanism`, `comparison`, `logic-flow`, `data-morph`. Pick the most educational visual for the current narration, not all six.
+- Values, ranges, ECG traces and clinical guidance require verified sources and human medical review; demo values/diagrams are illustrative and not patient advice.
+- Keep bottom area transparent with `layout="upper"` for lower presenters. Narration/HeyGen and editor captions remain external. Preview with `HealthcareDemo`, typecheck and render before publishing.

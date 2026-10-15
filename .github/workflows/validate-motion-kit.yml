@@ -5,6 +5,7 @@ on:
     paths:
       - 'components/**'
       - 'preview/**'
+      - 'templates/healthcare/**'
       - 'src/**'
       - 'package.json'
       - 'tsconfig.json'
@@ -31,9 +32,13 @@ jobs:
         run: npm run remotion:ensure
       - name: Render original 8-second MP4 demo
         run: npm run render:demo
+      - name: Render healthcare visual-system preview
+        run: npm run render:healthcare
       - name: Upload rendered sample
         uses: actions/upload-artifact@v4
         with:
           name: remotion-motion-kit-preview
-          path: out/motion-kit-demo.mp4
+          path: |
+            out/motion-kit-demo.mp4
+            out/healthcare-demo.mp4
           retention-days: 7
