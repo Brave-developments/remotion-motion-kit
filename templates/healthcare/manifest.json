@@ -1,0 +1,72 @@
+{
+  "id": "healthcare",
+  "version": "1.0.0",
+  "displayName": "Healthcare Visual Explainers",
+  "kind": "optional-scene-library",
+  "selection": "explicit-only",
+  "defaultEnabled": false,
+  "modes": [
+    "clinical-dashboard",
+    "anatomy-overlay",
+    "cellular-mechanism",
+    "comparison",
+    "logic-flow",
+    "data-morph"
+  ],
+  "layouts": [
+    "full",
+    "upper"
+  ],
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "upperVisualRegionPx": 1160
+  },
+  "palette": {
+    "canvas": "#F5F3EC",
+    "paper": "#FFFDF8",
+    "teal": "#0C988D",
+    "blue": "#3279BE",
+    "cyan": "#BFEAF1",
+    "normal": "#238466",
+    "caution": "#BB772B",
+    "critical": "#C94E54"
+  },
+  "components": [
+    "MedicalPanel",
+    "MedicalBadge",
+    "ClinicalMetric",
+    "ECGWaveform",
+    "HeartDiagram",
+    "AlveolusDiagram",
+    "CellMembraneDiagram"
+  ],
+  "editableProps": [
+    "mode",
+    "layout",
+    "headline",
+    "eyebrow",
+    "subheadline",
+    "takeaway",
+    "metrics",
+    "focusValue",
+    "focusLabel",
+    "focusTone",
+    "anatomy",
+    "mechanism",
+    "steps",
+    "comparison",
+    "stages",
+    "sourceNote",
+    "demoWatermark"
+  ],
+  "assetPolicy": "Original schematic SVG illustrations; no invented patient data, medical images, clinical references or real-world monitoring claims.",
+  "safety": {
+    "clinicalReviewRequired": true,
+    "notPatientAdvice": true,
+    "exampleValuesMustBeLabelled": true,
+    "diagnosticWaveformsNotSupplied": true
+  },
+  "notes": "Reusable Remotion visual library for nursing and medical explainers. Explicit opt-in. Preserve editorial-motion and other templates."
+}

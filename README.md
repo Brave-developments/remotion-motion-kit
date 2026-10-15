@@ -45,6 +45,16 @@ The source library is Lobe Icons plus a curated set of Simple Icons. Logos belon
 - Preview: `npm run studio` and select `EditorialMotionDemo`; render: `npm run render:editorial`
 - Use `layout="upper"` to keep a top graphics region above a separate HeyGen presenter in Flashcut. No automatic Flashcut integration is implied.
 
+## Healthcare visuals — optional nursing education system
+
+[Healthcare motion library](templates/healthcare/README.md) adds six reusable medical scene modes: clinical dashboard, anatomy overlay, cellular mechanism, comparison, logic flow and data progression. The standalone `HealthcareDemo` previews all six in Remotion Studio. Original schematic illustrations use warm ivory, teal, blue and medically meaningful status accents; real patient observations and clinical claims must be verified before publishing.
+
+- [Healthcare design + usage](templates/healthcare/README.md)
+- [Editable component and modes](templates/healthcare/HealthcareMotion.tsx)
+- [AI-readable manifest](templates/healthcare/manifest.json)
+- Preview: `npm run studio` → `HealthcareDemo`; render: `npm run render:healthcare`.
+- **Opt-in only**. Does not change Editorial Motion, FlashCut, or existing video workflows.
+
 ## Original Remotion compositions — preview locally
 
 Requires Node.js 22+ and npm. This project is only a showcase for starter components; upstream vendor projects may require their own dependencies and setup.
