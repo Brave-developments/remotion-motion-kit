@@ -1,0 +1,54 @@
+{
+  "id": "healthcare-3d",
+  "displayName": "Healthcare Depth-Style Extras",
+  "version": "1.0.0",
+  "kind": "optional-scene-library",
+  "selection": "explicit-only",
+  "defaultEnabled": false,
+  "renderTechnique": "SVG and deterministic Remotion animations (2.5D / depth-styled, not true 3D meshes)",
+  "modes": [
+    "heart-hero",
+    "lungs-gas-exchange",
+    "kidney-perfusion",
+    "circulation-flow",
+    "micro-mechanism",
+    "comparison-3d",
+    "dashboard-hybrid"
+  ],
+  "subtypes": {
+    "microMode": [
+      "insulin",
+      "ions",
+      "osmosis",
+      "medication"
+    ],
+    "layouts": [
+      "full",
+      "upper"
+    ]
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "upperVisualRegionPx": 1160
+  },
+  "componentPaths": [
+    "components/HeartHero3D.tsx",
+    "components/LungGasExchange3D.tsx",
+    "components/KidneyPerfusion3D.tsx",
+    "components/CirculationFlow3D.tsx",
+    "components/MicroMechanism3D.tsx",
+    "components/Comparison3D.tsx",
+    "components/HoloMetricPanel.tsx"
+  ],
+  "requiredMedicalReview": true,
+  "assetPolicy": "All diagrams original, schematic and illustrative; no photoreal meshes. Any true 3D assets added later require model rights and anatomy review.",
+  "references": "Clinical assertions and example values must be independently checked against current, authoritative sources per video.",
+  "constraints": [
+    "never treat 2.5D drawings as anatomically exact",
+    "do not represent schematic ECG as real tracing",
+    "never make up patient data",
+    "keep voice-over and captions owned by editor"
+  ]
+}

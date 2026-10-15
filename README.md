@@ -55,6 +55,15 @@ The source library is Lobe Icons plus a curated set of Simple Icons. Logos belon
 - Preview: `npm run studio` → `HealthcareDemo`; render: `npm run render:healthcare`.
 - **Opt-in only**. Does not change Editorial Motion, FlashCut, or existing video workflows.
 
+## Healthcare Premium + 3D Extras
+
+Two new **opt-in** additions extend the nursing explainer system without affecting the main or Editorial Motion templates:
+
+- [Premium clinical UI](templates/healthcare/premium/README.md): editable ECG-style monitor, ABG teaching gauges and animated vital-sign trends. Render: `npm run render:healthcare-premium`.
+- [Healthcare depth-styled visual extras](templates/healthcare-3d/README.md): heart, lungs/alveoli, kidneys/nephron, circulation, cellular mechanisms, physiological comparison and hybrid anatomy/metrics. Render: `npm run render:healthcare3d`.
+
+**3D clarity:** these first-party visuals use animated 2.5D SVG gradients and depth, not true 3D mesh models. A future mesh-based renderer could be added separately with licensed anatomy assets.
+
 ## Original Remotion compositions — preview locally
 
 Requires Node.js 22+ and npm. This project is only a showcase for starter components; upstream vendor projects may require their own dependencies and setup.
