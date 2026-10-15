@@ -40,3 +40,11 @@ Read README.md, REPORT.md, THIRD_PARTY.md and docs/INTEGRATION.md first.
 - Six modes: `clinical-dashboard`, `anatomy-overlay`, `cellular-mechanism`, `comparison`, `logic-flow`, `data-morph`. Pick the most educational visual for the current narration, not all six.
 - Values, ranges, ECG traces and clinical guidance require verified sources and human medical review; demo values/diagrams are illustrative and not patient advice.
 - Keep bottom area transparent with `layout="upper"` for lower presenters. Narration/HeyGen and editor captions remain external. Preview with `HealthcareDemo`, typecheck and render before publishing.
+
+## Premium healthcare and optional dimensional medical visuals
+
+- For richer clinical UIs, choose `templates/healthcare/premium/` and consult its README + manifest. Never invent patient data or imply live-device connectivity.
+- The `healthcare-3d` template is an independent **2.5D depth-style** opt-in; see `templates/healthcare-3d/README.md`, `manifest.json`. It is not photoreal 3D, nor a validated anatomical model.
+- Default medical education work to clean readable visuals; use 3D extras sparingly where depth enhances understanding.
+- Always check the narration, labels, biological claims and reference ranges with qualified review. Use caption-safe placement and synchronize with supplied speech/audio.
+- Preview `Healthcare3DDemo` / `HealthcarePremiumDemo`; require passing TypeScript check + rendered MP4 before merging.

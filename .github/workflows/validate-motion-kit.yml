@@ -6,6 +6,7 @@ on:
       - 'components/**'
       - 'preview/**'
       - 'templates/healthcare/**'
+      - 'templates/healthcare-3d/**'
       - 'src/**'
       - 'package.json'
       - 'tsconfig.json'
@@ -34,6 +35,10 @@ jobs:
         run: npm run render:demo
       - name: Render healthcare visual-system preview
         run: npm run render:healthcare
+      - name: Render premium healthcare dashboard preview
+        run: npm run render:healthcare-premium
+      - name: Render dimensional healthcare preview
+        run: npm run render:healthcare3d
       - name: Upload rendered sample
         uses: actions/upload-artifact@v4
         with:
@@ -41,4 +46,6 @@ jobs:
           path: |
             out/motion-kit-demo.mp4
             out/healthcare-demo.mp4
+            out/healthcare-premium-demo.mp4
+            out/healthcare-3d-demo.mp4
           retention-days: 7

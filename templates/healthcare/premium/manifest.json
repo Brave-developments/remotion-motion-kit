@@ -1,0 +1,29 @@
+{
+  "id": "healthcare-premium",
+  "displayName": "Healthcare Premium Clinical UI",
+  "version": "1.0.0",
+  "selection": "explicit-only",
+  "defaultEnabled": false,
+  "modes": [
+    "clinical-monitor",
+    "abg-dashboard",
+    "vital-trend"
+  ],
+  "layouts": [
+    "full",
+    "upper"
+  ],
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "upperVisualRegionPx": 1160
+  },
+  "components": [
+    "ClinicalMonitor",
+    "ABGPanel",
+    "VitalTrend"
+  ],
+  "limitations": "Non-diagnostic example panels; ECG trace schematic; ABG reference ranges teaching examples, verify laboratory guidance.",
+  "medicalReviewRequired": true
+}

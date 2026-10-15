@@ -25,7 +25,7 @@ export type Healthcare3DProps={
 };
 export const Healthcare3D:React.FC<Healthcare3DProps>=(props)=>{
  const f=useCurrentFrame(),{fps}=useVideoConfig();
- const upper=props.layout==='upper', height=upper?1160:1920, scale=upper?.71:1;
+ const upper=props.layout==='upper', height=upper?1160:1920, scale=upper ? 0.71 : 1;
  const title=props.title;
  const stageH=upper?510:890;
  const visualSize=upper?430:660;

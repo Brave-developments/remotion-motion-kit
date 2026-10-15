@@ -4,7 +4,7 @@ import { p } from '../tokens';
 import { HeartHero3D } from './HeartHero3D';
 /** Stylised, looping circulation map with animated particles. Flow arrows are qualitative. */
 export const CirculationFlow3D:React.FC<{size?:number;lowFlow?:boolean}>=({size=640,lowFlow=false})=>{
- const f=useCurrentFrame(); const t=f*(lowFlow?.004:.014);
+ const f=useCurrentFrame(); const t=f*(lowFlow ? 0.004 : 0.014);
  const points=Array.from({length:10},(_,i)=>{const a=i/10*Math.PI*2+t;return {x:335+267*Math.sin(a),y:298+212*Math.cos(a),a};});
  return <svg viewBox="0 0 680 620" width={size} height={size*.912} role="img" aria-label="Stylised closed-loop circulation and heart flow">
  <defs>

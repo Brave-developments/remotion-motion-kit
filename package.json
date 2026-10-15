@@ -10,7 +10,9 @@
     "render:demo": "remotion render src/index.ts MotionKitDemo out/motion-kit-demo.mp4",
     "remotion:ensure": "remotion browser ensure",
     "render:editorial": "remotion render src/index.ts EditorialMotionDemo out/editorial-motion-demo.mp4",
-    "render:healthcare": "remotion render src/index.ts HealthcareDemo out/healthcare-demo.mp4"
+    "render:healthcare": "remotion render src/index.ts HealthcareDemo out/healthcare-demo.mp4",
+    "render:healthcare3d": "remotion render src/index.ts Healthcare3DDemo out/healthcare-3d-demo.mp4",
+    "render:healthcare-premium": "remotion render src/index.ts HealthcarePremiumDemo out/healthcare-premium-demo.mp4"
   },
   "dependencies": {
     "remotion": "4.0.534",
